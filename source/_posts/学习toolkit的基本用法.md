@@ -61,17 +61,13 @@ extraReducers: (builder) => {
     extraReducers: (builder) => {
         builder.addCase(incrementAsync.pending, (state) => {
             state.status = '等待中'
-        })
-```
-
-```js
-
-        .addCase(incrementAsync.fulfilled, (state, action) => {
+        }).addCase(incrementAsync.fulfilled, (state, action) => {
             state.status = '完成✅'
             state.value += action.payload
         } )
     },
 ```
+
 ```js
 export const incrementAsync = createAsyncThunk('counter/incrementAsync',
   async (amount) => {
@@ -79,5 +75,4 @@ export const incrementAsync = createAsyncThunk('counter/incrementAsync',
       return response.data
   }
 )
-
 ```
